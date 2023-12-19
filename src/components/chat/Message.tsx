@@ -3,7 +3,7 @@ import { ExtendedMessage } from '@/types/message'
 import ReactMarkdown from 'react-markdown'
 import { format } from 'date-fns'
 import { forwardRef } from 'react'
-import { Icons } from '../icons'
+import { Icons } from '../Icons'
 
 interface MessageProps {
   message: ExtendedMessage
