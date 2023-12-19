@@ -91,7 +91,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
     )
   }
 )
-
-Message.displayName = 'Message'
+ 
+Message.displayName = 'Message'  //because it is forward ref
 
 export default Message
