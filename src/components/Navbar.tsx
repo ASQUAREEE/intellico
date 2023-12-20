@@ -24,7 +24,7 @@ const Navbar = async () => {
             <span>intellico.</span>
           </Link>
 
-          <MobileNav isAuth={!!user} />
+          <MobileNav isAuth={!!user} />   {/* use for checking true or false in string*/}
 
           <div className='hidden items-center space-x-4 sm:flex'>
             {!user ? (
