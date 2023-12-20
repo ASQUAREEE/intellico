@@ -3,15 +3,20 @@ import { db } from '@/db'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import { redirect } from 'next/navigation'
 
-//"use client"            //log will be in client side
+// "use client"            //log will be in client side
 
 const Page = async () => {
 
     const { getUser } = getKindeServerSession()
     const user = await getUser()
+  
 
 
- if(!user || !user.id) redirect('/auth-callback?origin=dashboard')
+ if(!user || !user.id){
+  
+  redirect('/auth-callback?origin=dashboard')
+
+ }
 
   const dbUser = await db.user.findFirst({
  
@@ -22,6 +27,7 @@ const Page = async () => {
   })
 
   if(!dbUser) {
+  
 
  redirect('/auth-callback?origin=dashboard')
 

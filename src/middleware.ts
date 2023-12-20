@@ -1,7 +1,15 @@
-import { authMiddleware } from "@kinde-oss/kinde-auth-nextjs/server"
+import { authMiddleware } from '@kinde-oss/kinde-auth-nextjs/server'
 
+// export const config = {
+//   matcher: ['/dashboard/:path*', '/auth-callback'],
+  
+// }
 export const config = {
-    matcher: ["/dashboard/:path*", "/auth-callback"]  // theswe are the pages we want to protect 
+  matcher: [ '/admin'],
+  
 }
 
 export default authMiddleware
+
+
+

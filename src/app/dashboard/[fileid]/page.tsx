@@ -21,7 +21,9 @@ const {fileid} = params;
 const {getUser} = getKindeServerSession()
 const user = await getUser()
 
-if(!user ||  !user.id) redirect(`/auth-callback?origin=dashboard/${fileid}`)
+if(!user ||  !user.id){ 
+  redirect(`/auth-callback?origin=dashboard/${fileid}`)
+}
 
 
 
