@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { cn } from '@/lib/utils'
+import { cn, constructMetadata } from '@/lib/utils'
 import Navbar from '@/components/Navbar'
 import Providers from '@/components/Providers'
 
@@ -11,14 +11,17 @@ import { Toaster } from '@/components/ui/toaster'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Intellico',
-  description: 'new generation pdf with AI',
-  // icons: {
-  //   // icon: ['/favicon.ico?v=4'],
-  //   icon: 'public/favicon.ico',
-  // }
-}
+// export const metadata: Metadata = {
+//   title: 'Intellico',
+//   description: 'new generation pdf with AI',
+//   // icons: {
+//   //   // icon: ['/favicon.ico?v=4'],
+//   //   icon: 'public/favicon.ico',
+//   // }
+// }
+
+export const metadata = constructMetadata()
+
 
 export default function RootLayout({
   children,
