@@ -104,8 +104,6 @@ return <Dropzone multiple={false} onDrop = {async(acceptedFile) => {
   }
 
   
-  
- 
 
   clearInterval(progressInterval)
   setUploadProgress(100)
@@ -121,7 +119,7 @@ return <Dropzone multiple={false} onDrop = {async(acceptedFile) => {
 
 <div className="flex items-center justify-center h-full w-full">
 
-<label htmlFor="dropzone-file"
+<label
 className="flex flex-col items-center justify-center w-full h-full rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
 >
 <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -170,10 +168,10 @@ className="flex flex-col items-center justify-center w-full h-full rounded-lg cu
   </div>
 ): null}
 
+</label>
+
 <input {...getInputProps()} type="file" id='dropzone-file' className="hidden" />
 
-
-</label>
 
 </div>
 
