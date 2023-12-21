@@ -132,7 +132,7 @@ className="flex flex-col items-center justify-center w-full h-full rounded-lg cu
 
   </p>
 
-<p className='text-xs text-zinc-500'>PDF (up to {isSubscribed? "16":"4"})MB</p>
+<p className='text-xs text-zinc-500'>PDF (up to {isSubscribed? "16MB":"4MB"})</p>
 
 </div>
 
