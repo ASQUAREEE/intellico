@@ -1,57 +1,42 @@
-"use client"
-
+"use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { trpc } from "../_trpc/client";
+import { useRef, useState } from "react";
 import { Loader } from "lucide-react";
 
-const Page =  () => {
-
-     const router = useRouter();
-
-     const searchParams = useSearchParams();
-
-     const origin = searchParams.get('origin');
-
-
-     // const apiResponse = await fetch('/api/whatever');
-     // const data = await apiResponse.json();           // data is any typescript is really very bad
-
-     
-      // const {data, isLoading} = trpc.authCallback.useQuery(undefined, {
-
-      // this query runs on pageload
-       trpc.authCallback.useQuery(undefined, {
-
-        onSuccess: ({success}) =>{
-
-          if(success){
-               //user is synced to the db
-               console.log("user is synced to the db");
-               router.push(origin ? `/${origin}` : '/dashboard');
-          }
-
-
-        },
-
-
-        onError: (error) => {
-
-        if(error.data?.code === "UNAUTHORIZED") {
-      router.push("/sign-in");
-
-
+  const Page = () => {
+    const router = useRouter();
+    const retry = useRef(0);
+    const maxRetryCount = 5;
+    const searchParams = useSearchParams();
+    const origin = searchParams.get("origin");
+  
+    const { refetch } = trpc.authCallback.useQuery(undefined, {
+      onSuccess: ({ success }) => {
+        if (success) {
+          // user is synced to db
+          router.push(origin ? `/${origin}` : "/dashboard");
         }
-
-        },
- 
-      retry: true,
-
+      },
+      onError: (err) => {
+        console.log(err);
+        if (err.data?.code === "UNAUTHORIZED") {
+          retry.current = retry.current + 1;
+          if (retry.current <= maxRetryCount) {
+            // Retry up to maxRetryCount
+            setTimeout(() => {
+              refetch();
+            }, 500);
+          } else {
+            router.push("/sign-in");
+          }
+        }
+      },
+  
+      retry: false,
       retryDelay: 500,
-
-
-      })
-
+    });
 
       return (
       
@@ -71,7 +56,6 @@ const Page =  () => {
         </div>
 
 )
-
-}
+};
 
 export default Page;
