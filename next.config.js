@@ -18,6 +18,10 @@ const nextConfig = {
 
   },
 
+  images: {
+    domains: ['lh3.googleusercontent.com'], // Add your domain here
+  },
+
   webpack: (config, {buildId, dev, isServer, defaultLoaders, webppack}) => {
     config.resolve.alias.canvas = false;
 
