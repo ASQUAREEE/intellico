@@ -129,11 +129,11 @@ export default function Home() {
               <span className="text-sm font-medium text-blue-600">Step 1</span>
 
               <span className="text-xl font-semibold">
-                Sign up for an account{" "}
+               Create your account{" "}{" "}
               </span>
 
               <span className="mt-2 text-zinc-700">
-                Either starting out with a free plan or choose our{" "}
+              Get started with a free plan or upgrade to our{" "}
                 <Link
                   href="/pricing"
                   className="text-blue-700 underline underline-offset-2"
@@ -175,7 +175,7 @@ export default function Home() {
           </li>
         </ol>
        
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        {/* <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mt-16 flow-root sm:mt-24">
             <div className="-m-2 rounded-xl bg-grey-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
               <Image
@@ -188,7 +188,7 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

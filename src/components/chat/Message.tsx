@@ -22,7 +22,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
           className={cn(
             'relative flex h-6 w-6 aspect-square items-center justify-center',
             {
-              'order-2 bg-blue-600 rounded-sm':
+              'order-2 bg-gradient-to-r from-purple-600 to-indigo-500':
                 message.isUserMessage,
               'order-1 bg-zinc-800 rounded-sm':
                 !message.isUserMessage,
@@ -48,7 +48,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
             className={cn(
               'px-4 py-2 rounded-lg inline-block',
               {
-                'bg-blue-600 text-white':
+                'bg-gradient-to-r from-purple-600 to-indigo-500 text-white':
                   message.isUserMessage,
                 'bg-gray-200 text-gray-900':
                   !message.isUserMessage,

@@ -42,7 +42,7 @@ const ChatInput = ({isDisabled}: ChatInputProps) => {
 
    <Button
    disabled={isLoading || isDisabled}
-    className="absolute bottom-1.5 right-[8px]" aria-label='send message'
+    className="absolute bottom-1.5 right-[8px] bg-gradient-to-r from-purple-600 to-indigo-500" aria-label='send message'
     type="submit"
     onClick={() => {
         addMessage()

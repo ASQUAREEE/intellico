@@ -57,7 +57,7 @@ icons?:string
 
     icons,
     metadataBase: new URL('https://intellico.vercel.app'),
-    themeColor: '#FFF',
+    // themeColor: '#FFF',
     ...(noIndex && {
       robots: {
         index: false,
@@ -66,4 +66,9 @@ icons?:string
     })
 
   }
+}
+
+export const viewport = {
+  // Include other properties as needed
+  themeColor: '#FFF'
 }
