@@ -81,8 +81,8 @@ export default function Home() {
                   <Image
                     src="/dashboard-preview.jpg"
                     alt="product preview"
-                    width={1364}
-                    height={866}
+                    width={1857}
+                    height={931}
                     quality={100}
                     className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
                   />
